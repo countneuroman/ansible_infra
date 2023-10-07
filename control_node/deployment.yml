@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: control-node
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: control-node
+  template:
+    metadata:
+      labels:
+        app: control-node
+    spec:
+      containers:
+      - name: control-node
+        image: control-node:0.0.1
+        imagePullPolicy: Never
+        command:
+          - sleep
+          - infinity

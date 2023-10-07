@@ -1,0 +1,18 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: managed-node1
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: managed-node1
+  template:
+    metadata:
+      labels:
+        app: managed-node1
+    spec:
+      containers:
+      - name: managed-node1
+        image: managed-node1:0.0.1
+        imagePullPolicy: Never
